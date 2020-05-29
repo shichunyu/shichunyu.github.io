@@ -2,6 +2,7 @@
 
 * [About](README.md)
 * [Index](index.md)
+* [1. TwoSum](0001.-twosum.md)
 * [0210. Course Schedule II](0210.-course-schedule-ii.md)
 * [5384. Kids with Greatest Number of Candies](1431.-kids-with-greatest-number-of-candies.md)
 * [323. Number of Connected Component in an Undirected Graph](0323.-number-of-connected-component-in-an-undirected-graph.md)
@@ -11,7 +12,6 @@
 * [0234. Palindrome Linked List](0234.-palindrome-linked-list.md)
 * [Ransom Note](0000.ransom-note.md)
 * [0063. Unique Paths II](0063.-unique-paths-ii.md)
-* [1. TwoSum](0001.-twosum.md)
 * [78. Subsets \(Power Set\)](0078.-subsets-power-set.md)
 * [0509. Fibonacci Number](0509.-fibonacci-number.md)
 * [0019. Remove Nth Node From End of List](0019.-remove-nth-node-from-end-of-list.md)
