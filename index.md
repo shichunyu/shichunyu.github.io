@@ -1,6 +1,6 @@
 # Index
 
-Hi, I'm ChunYu.
+Hi, I'm ChunYu. Hi.
 
 Check out my projects:
 
