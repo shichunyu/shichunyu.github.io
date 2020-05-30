@@ -142,7 +142,8 @@ print(s.knapsack(items, 10)) # 90
 # Dynamic Programming Approach @shichunyu on May 29, 2020
 
 m is the width and n is the height of the DP table
-**Runtime:** O(mxn) because we visit each cell of the table once
+
+**Runtime:** O(mxn) because we visit each cell of the table once\
 **Space:** O(mxn) where we build a table of mxn size
 
 Great explanation: [Back-to-Back SWE](https://www.youtube.com/watch?v=xCbYmUPvc2Q) and AlgoExpert.io
