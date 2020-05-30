@@ -67,7 +67,8 @@ knapsack(items, maxWeight) = 22
 5. Repeat until there are no more leaf nodes with weight exceeding the limit.
 
 A good exmaple explaining the time complexity from [Educative](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews/RM1BDv71V60#top-down-dynamic-programming-with-memoization)
-**Runtime:** O(N*M) where N = num of items and M = max_weight
+
+**Runtime:** O(N*M) where N = num of items and M = max_weight\
 **Space:** O(N*M) as well for storing the dictionary
 
 ```py
