@@ -1,10 +1,8 @@
 # 0063. Unique Paths II
 
-## 63. Unique Paths II
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 
-A robot is located at the top-left corner of a m x n grid \(marked 'Start' in the diagram below\).
-
-The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid \(marked 'Finish' in the diagram below\).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
 
 Now consider if some obstacles are added to the grids. How many unique paths would there be?
 
@@ -31,7 +29,8 @@ There are two ways to reach the bottom-right corner:
 
 ## Dynamic Programming Solution @shichunyu on May 25, 2020
 
-> Runtime: O\(m_n\) Space: O\(m_n\)
+> Runtime: O(m*n) \
+> Space: O(m*n)
 
 ```python
 class Solution:
