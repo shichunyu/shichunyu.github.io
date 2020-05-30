@@ -171,7 +171,7 @@ The intuition is keep bi-secting the subarray into 2 halfs, cutting up and and c
 - We see that between the values of 4, 6, 3 and -1, 6 is the largest
 
 
-![Level 0 - Final](images/0053_Level_0_final.jpg)
+![Level 0 - Final](images/0053_Level_0_Final.jpg)
 - So 6 is the final answer
 - The subarray is: [4,-1,2,1]
   
