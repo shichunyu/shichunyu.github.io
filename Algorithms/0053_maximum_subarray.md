@@ -1,6 +1,13 @@
 # 0053. Maximum Subarray
 
-## 53. Maximum Subarray
+- [0053. Maximum Subarray](#0053-maximum-subarray)
+  - [One Pointer Approach - @shichunyu on May 29, 2020](#one-pointer-approach---shichunyu-on-may-29-2020)
+    - [Intuition](#intuition)
+    - [Solution](#solution)
+  - [⭐️ Dynamic Programming - Kadane's Algorithm](#️-dynamic-programming---kadanes-algorithm)
+  - [⭐️ Divide And Conquer](#️-divide-and-conquer)
+    - [Intuition](#intuition-1)
+
 
 Given an integer array nums, find the contiguous subarray\(containing at least one number\) which has the largest sum and return its sum.
 
@@ -17,7 +24,8 @@ Follow up:
 
 ## One Pointer Approach - @shichunyu on May 29, 2020
 
-**Runtime:** O\(N\) because we traverse the array once only. **Space:** O\(1\) because we only use a pointer and store values in variables.
+**Runtime:** O\(N\) because we traverse the array once only. 
+**Space:** O\(1\) because we only use a pointer and store values in variables.
 
 ### Intuition
 
@@ -43,6 +51,8 @@ Follow up:
   * When the subarray has "closed" then it's time to start a new subarray, and we clear cur\_val.
   * Do this until we reach the end of the array
   * Return max\_val
+
+### Solution
 
 ```python
 class Solution:
@@ -93,3 +103,112 @@ print(s.maxSubArray([-2,1])) # 1
 print(s.maxSubArray([])) # -inf
 ```
 
+## ⭐️ Dynamic Programming - Kadane's Algorithm
+**Runtime:** O(N) since we have one pointer going through the length of the array
+**Space:** O(1) since we are only using pointers
+
+Best explanation: [Back-to-Back SWE Youtube](https://www.youtube.com/watch?v=2MmGzdiKR9Y)
+
+This method simplifies the method above:
+- If the previous subarray plus the next element is greater than what the subarray would otherwise be, then include the next element.
+- Otherwise, the next element should start a new subarray.
+
+This method is cleaner as we remove all the nexted "if" statements which are hard to read.
+
+```py
+class Solution:
+    def maxSubArray(self, array):
+      max_val = array[0]
+      cur_max_val = array[0]
+
+      for i in range (1,len(array)):
+        cur_max_val = max(cur_max_val + array[i], array[i])
+        max_val = max(cur_max_val, max_val)
+
+      return max_val
+      
+```
+
+## ⭐️ Divide And Conquer
+**Runtime:** O(N*LogN)
+**Space:** O(N*LogN)
+
+This solution will actually give us the maximum subarray, unlike the DP solution which only gives us the sum of the max subarray.
+
+### Intuition
+The maximum subarray can either be:
+1. Completely on the left side of the array
+2. Completely on the right side of the array
+3. Start on the left side and ends on the right side (straddles both sides)
+
+The intuition is keep bi-secting the subarray into 2 halfs, cutting up and and comparing those 3 options 
+
+![Starting](images/0053_Starting_Point.jpg)
+- First Let's subdivide the array until there are arrays of only length 1.
+- The numbers in **blue parens** are the sum of the arrays for easy reference
+
+
+![Level 1](images/0053_Level_1.jpg)
+- Compare the leaf nodes with the parent node.
+- The node with the largest value gets promoted up the tree. The pink cards show the **array** (not the value, but the actual array items) being "promoted"
+
+
+![Level 2](images/0053_Level_2.jpg)
+- Keep moving up the tree and promote the largest valued subarrays.
+- Now we have come to a point where we need to calculate the crosses which are indicated with ???
+
+
+![Level 2-Cross](images/0053_Level_2_Cross.jpg)
+- To get the appropriate cross-section subarray, take the subarrays with largest value on left side, and go until the end of the subarray with largest value on right side.
+- In this example, for the right hand side subarray:
+  - the largest subarray on the left is [2,1], with starting index = 5
+  - the largest subarray on the right is 4, with index = 8
+- So the cross section is array[5:] so the final cross-section subarray is [2,1,-5,4]
+
+
+![Level 0 - Cross](images/0053_Level_0_cross.jpg)
+- Now we can do the same thing for the top of the tree, calculating the subarray
+- We see that between the values of 4, 6, 3 and -1, 6 is the largest
+
+
+![Level 0 - Final](images/0053_Level_0_final.jpg)
+- So 6 is the final answer
+- The subarray is: [4,-1,2,1]
+  
+  **But how to do this programmatically?**
+
+
+```py
+class Solution:
+    def cross_sum(self, nums, left, right, p): 
+            if left == right:
+                return nums[left]
+
+            left_subsum = float('-inf')
+            curr_sum = 0
+            for i in range(p, left - 1, -1):
+                curr_sum += nums[i]
+                left_subsum = max(left_subsum, curr_sum)
+
+            right_subsum = float('-inf')
+            curr_sum = 0
+            for i in range(p + 1, right + 1):
+                curr_sum += nums[i]
+                right_subsum = max(right_subsum, curr_sum)
+
+            return left_subsum + right_subsum   
+    
+    def helper(self, nums, left, right): 
+        if left == right:
+            return nums[left]
+        
+        p = (left + right) // 2
+            
+        left_sum = self.helper(nums, left, p)
+        right_sum = self.helper(nums, p + 1, right)
+        cross_sum = self.cross_sum(nums, left, right, p)
+        
+        return max(left_sum, right_sum, cross_sum)
+        
+    def maxSubArray(self, nums: 'List[int]') -> 'int':
+        return self.helper(nums, 0, len(nums) - 1)
