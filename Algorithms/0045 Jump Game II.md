@@ -5,6 +5,14 @@ Each element in the array represents your maximum jump length at that position.
 
 Your goal is to reach the last index in the minimum number of jumps.
 
+- dsfasdf
+- asdfasdf
+- asdf
+
+1. sadfsdaf
+2. asdfsdaf
+3. asdf
+4. asdfsdf
 ```
 Example:
 
@@ -16,9 +24,9 @@ Jump 1 step from index 0 to 1, then 3 steps to the last index.
 
 > Note: You can assume that you can always reach the last index.  
 
-## Time Limit Exceeded
+## Time Limit Exceeded - May 30, 2020
 ```py
- 0. 1. 2. 3. 4. 
+ 1. 1. 2. 3. 4. 
 [2, 3, 1, 1, 4]
  0  1  1  2  2
 
@@ -34,7 +42,7 @@ class Solution:
         return jumps[n-1]
 ```
 
-## Time Limit Exceeded
+## Time Limit Exceeded - May 30, 2020
 ```py
  0. 1. 2. 3. 4. 
 [2, 3, 1, 1, 4, 3, 2, 0, 1]
@@ -62,7 +70,7 @@ print(s.jump([2, 3, 1, 1, 4]))
 
 ```
 
-# Recursive (incomplete - not working)
+# Recursive (incomplete - not working) - May 30, 2020
 ```py
  0. 1. 2. 3. 4. 
 [2, 3, 1, 1, 4, 3, 2, 0, 1]
