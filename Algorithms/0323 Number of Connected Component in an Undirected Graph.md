@@ -1,6 +1,6 @@
 # 323. Number of Connected Component in an Undirected Graph
 
-![question](https://github.com/shichunyu/shichunyu.github.io/tree/2f4916332140a9eadca6d27efb27c710832ecd0c/Algorithms/Leetcode%20Catalog/323.%20Number%20of%20Connected%20Component%20in%20an%20Undirected%20Graph.jpg)
+![question](images/0323_Number_of_Connected_Component_in_an_Undirected_Graph.jpg)
 
 ## BFS
 
