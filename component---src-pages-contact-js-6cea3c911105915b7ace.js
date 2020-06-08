@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"Cuy+":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n.n(a),c=n("yBb5"),u=n("hIod");t.default=function(){return l.a.createElement("div",null,l.a.createElement(c.a,null,l.a.createElement(u.a,{title:"Contact"}),l.a.createElement("h1",null,"Get in touch"),l.a.createElement("p",null,"Tweet @shicarriesyou")))}}}]);
+//# sourceMappingURL=component---src-pages-contact-js-6cea3c911105915b7ace.js.map
