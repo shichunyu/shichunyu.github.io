@@ -1,1 +1,0 @@
-{"componentChunkName":"component---src-templates-blog-js","path":"/blog/01. test post","result":{"data":{"markdownRemark":{"frontmatter":{"title":"01. test post","date":"2020.06.02"},"html":"<p><img src=\"./test.png\"></p>"}},"pageContext":{"slug":"01. test post"}}}
