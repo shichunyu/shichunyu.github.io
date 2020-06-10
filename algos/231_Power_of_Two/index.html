@@ -116,7 +116,7 @@ s <span class="token operator">=</span> Solution<span class="token punctuation">
 <p>If n = 8, then we get: 8 -> 4 -> 2 -> 1. No remainders, it is a power of 2<br>
 If n = 9, then 9%2 = 1. It is NOT a power of 2<br>
 If n = 24, then we get: 24 -> 12 -> 6 -> 3. 2%2 = 1. It is NOT a power of 2</p>
-<h3 id="-code" style="position:relative;"><a href="#-code" aria-label=" code permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>## Code</h3>
+<h2 id="code-2" style="position:relative;"><a href="#code-2" aria-label="code 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">isPowerOfTwo</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">while</span> n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
@@ -134,7 +134,78 @@ If n = 24, then we get: 24 -> 12 -> 6 -> 3. 2%2 = 1. It is NOT a power of 2</p>
         <span class="token keyword">while</span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
             n <span class="token operator">//=</span> <span class="token number">2</span>
         <span class="token keyword">return</span> n <span class="token operator">==</span> <span class="token number">1</span></code></pre></div>
-<h1 id="bit-manipulation-o1--o1" style="position:relative;"><a href="#bit-manipulation-o1--o1" aria-label="bit manipulation o1  o1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bit Manipulation: O(1) / O(1)</h1></div></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+<h1 id="bit-manipulation-o1--o1" style="position:relative;"><a href="#bit-manipulation-o1--o1" aria-label="bit manipulation o1  o1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bit Manipulation: O(1) / O(1)</h1>
+<p>There's two ways of doing bit manipulation. First, let's look at the unique properties of powers of two in binary:</p>
+<ul>
+<li>2<sup>0</sup> = 1 => 0001<sub>2</sub> </li>
+<li>2<sup>1</sup> = 2 => 0010<sub>2</sub></li>
+<li>2<sup>2</sup> = 4 => 0100<sub>2</sub></li>
+<li>2<sup>3</sup> = 8 => 1000<sub>2</sub></li>
+</ul>
+<p>As we can see, in binary, any powers of two only has a single <code class="language-text">1</code> digit. How can we use that to our advantage?</p>
+<h2 id="checking-the-right-most-1digit" style="position:relative;"><a href="#checking-the-right-most-1digit" aria-label="checking the right most 1digit permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Checking the right-most 1digit</h2>
+<p>If a number if binary, then the right-most <code class="language-text">1</code> is the only <code class="language-text">1</code> to exist, so it should be the same as the original number.</p>
+<p><strong>For example:</strong></p>
+<ul>
+<li>4 in binary is <code class="language-text">0100</code>. The right-most <code class="language-text">1</code> digit is: <code class="language-text">0100</code>. Since <code class="language-text">0100</code> = <code class="language-text">0100</code> = 4 we know that 4 is a power of two.</li>
+<li>7 in binary is <code class="language-text">0111</code>. The right-most <code class="language-text">1</code> digit is: <code class="language-text">0001</code>. Since <code class="language-text">0001</code> != <code class="language-text">0111</code> or 7, we know that <code class="language-text">0111</code> is not a power of two.</li>
+</ul>
+<p>The way to check the right-most <code class="language-text">1</code> digit would be to use the formula:</p>
+<blockquote>
+<p>  <code class="language-text">x&amp;(-x) = x</code></p>
+</blockquote>
+<p>How does this formula work?</p>
+<p><code class="language-text">x</code> is our original number</p>
+<p><code class="language-text">-x</code> is the negative of our original number, in binary.</p>
+<p>Python uses <strong>Two's Complement</strong> so <code class="language-text">-x = ~x + 1</code>. If <code class="language-text">x&amp;(-x) = x</code> then the number is a power of two.</p>
+<h3 id="trace" style="position:relative;"><a href="#trace" aria-label="trace permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trace</h3>
+<p>Let's see a trace of a few examples to see how the formula works:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">x = 4          x = 7         x = 6          x = 5
+0100  x        0111  x       0110  x        0101  x
+1011 ~x        1000 ~x       1001 ~x        1010 ~x
+1100 -x        1001 -x       1010 -x        1011 -x
+                      
+0100  x        0111 x        0110  x        0101  x
+1100 -x        1001 -x       1010 -x        1011 -x
+0100  x&amp;(-x)   0001 x&amp;(-x)   0010  x&amp;(-x)   0001  x&amp;(-x)    </code></pre></div>
+<p> When the number is a power of 2, <code class="language-text">x&amp;(-x) = x</code> and that is the formula we can use in our code below.</p>
+<h3 id="code-3" style="position:relative;"><a href="#code-3" aria-label="code 3 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h3>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isPowerOfTwo</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># edge case</span>
+        <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        <span class="token comment"># formula</span>
+        <span class="token keyword">return</span> n <span class="token operator">&amp;</span> <span class="token punctuation">(</span><span class="token operator">-</span>n<span class="token punctuation">)</span> <span class="token operator">==</span> n</code></pre></div>
+<h2 id="removing-the-right-most-1-digit" style="position:relative;"><a href="#removing-the-right-most-1-digit" aria-label="removing the right most 1 digit permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Removing the right-most 1 digit</h2>
+<p>Since powers of 2 only have a single <code class="language-text">1</code> digit in binary, if we were to remove the right-most <code class="language-text">1</code> digit, since that is the <em>only</em> <code class="language-text">1</code> digit, then the value of the number should become <code class="language-text">0</code>. This wouldn't work if the number is not a power of 2.</p>
+<p>For example:</p>
+<ul>
+<li>4 in binary is <code class="language-text">0100</code>. The right-most <code class="language-text">1</code> digit is: <code class="language-text">0100</code>. Remove it and we'll get <code class="language-text">0000</code>. Since the result is <code class="language-text">0</code>, we know that 4 is a power of 2.</li>
+<li>7 in binary is <code class="language-text">0111</code>. The right-most <code class="language-text">1</code> digit is: <code class="language-text">0001</code>. Remove it and we'll get <code class="language-text">0110</code> which is <code class="language-text">6</code>. Since the result is not <code class="language-text">0</code> we know that 7 is not a power of 2.</li>
+</ul>
+<p>The way to check if removing the right-most <code class="language-text">1</code> digit will result in <code class="language-text">0</code> is to use the formula</p>
+<blockquote>
+<p>  <code class="language-text">x&amp;(x-1) = 0</code></p>
+</blockquote>
+<p><code class="language-text">x</code> is our original number</p>
+<p><code class="language-text">x-1</code> is our original number minus 1.</p>
+<p>If the result is <code class="language-text">0</code> then we know the number is a power of 2.</p>
+<h3 id="trace-1" style="position:relative;"><a href="#trace-1" aria-label="trace 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trace</h3>
+<p>Let's see a trace of a few examples to see how the formula works:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">x = 4          x = 7         x = 6          x = 5
+0100  x        0111  x       0110  x        0101  x
+0011  x-1      0110  x-1     0101  x-1      0100  x-1
+0000  x&amp;(x-1)  0110  x&amp;(x-1) 0100  x&amp;(x-1)  0100  x&amp;(x-1)  </code></pre></div>
+<p>When the number is a power of 2, <code class="language-text">x&amp;(x-1) = 0</code> and that is the formula we use in our code below.</p>
+<h3 id="code-4" style="position:relative;"><a href="#code-4" aria-label="code 4 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h3>
+<div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isPowerOfTwo</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># edge case</span>
+        <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        <span class="token comment"># formula</span>
+        <span class="token keyword">return</span> n <span class="token operator">&amp;</span> <span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span></code></pre></div></div></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
