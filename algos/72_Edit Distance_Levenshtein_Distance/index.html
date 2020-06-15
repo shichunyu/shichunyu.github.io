@@ -55,29 +55,7 @@
 </ul>
 </div>
 <h1 id="description" style="position:relative;"><a href="#description" aria-label="description permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h1>
-<p>Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.</p>
-<p>You have the following 3 operations permitted on a word:</p>
-<ol>
-<li>Insert a character</li>
-<li>Delete a character</li>
-<li>Replace a character</li>
-</ol>
-<p><strong>Example 1:</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: word1 = “horse”, word2 = “ros”
-Output: 3
-Explanation: 
-horse -&gt; rorse (replace ‘h’ with ‘r’)
-rorse -&gt; rose (remove ‘r’)
-rose -&gt; ros (remove ‘e’)</code></pre></div>
-<p><strong>Example 2:</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: word1 = “intention”, word2 = “execution”
-Output: 5
-Explanation: 
-intention -&gt; inention (remove ’t’)
-inention -&gt; enention (replace ‘I’ with ‘e’)
-enention -&gt; exention (replace ’n’ with ‘x’)
-exention -&gt; exection (replace ’n’ with ‘c’)
-exection -&gt; execution (insert ‘u’)</code></pre></div>
+<p>Question Source: <a href="https://leetcode.com/problems/edit-distance">https://leetcode.com/problems/edit-distance</a></p>
 <h1 id="dynamic-programming-solution---june-1-2020" style="position:relative;"><a href="#dynamic-programming-solution---june-1-2020" aria-label="dynamic programming solution   june 1 2020 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dynamic Programming Solution - June 1, 2020</h1>
 <p>Word 1 = “horse”<br>
 Word 2 = “ros”</p>

@@ -57,23 +57,6 @@
 <h1 id="overview" style="position:relative;"><a href="#overview" aria-label="overview permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h1>
 <h2 id="source" style="position:relative;"><a href="#source" aria-label="source permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Source</h2>
 <p>Question Source: <a href="https://leetcode.com/problems/two-city-scheduling/solution/">Leetcode</a></p>
-<h2 id="description" style="position:relative;"><a href="#description" aria-label="description permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
-<p>There are 2N people a company is planning to interview. The cost of flying the i-th person to city A is costs[I][0], and the cost of flying the i-th person to city B is costs[I][1].</p>
-<p>Return the minimum cost to fly every person to a city such that exactly N people arrive in each city.</p>
-<p><strong>Example 1:</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: [[10,20],[30,200],[400,50],[30,20]]
-Output: 110
-Explanation: 
-The first person goes to city A for a cost of 10.
-The second person goes to city A for a cost of 30.
-The third person goes to city B for a cost of 50.
-The fourth person goes to city B for a cost of 20.
-
-The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.</code></pre></div>
-<p><strong>Note:</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">1 &lt;= costs.length &lt;= 100
-It is guaranteed that costs.length is even.
-1 &lt;= costs[I][0], costs[I][1] &lt;= 1000</code></pre></div>
 <h1 id="on2-runtime-solutions" style="position:relative;"><a href="#on2-runtime-solutions" aria-label="on2 runtime solutions permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>O(n<sup>2</sup>) Runtime Solutions</h1>
 <p>All the solutions below unfortunately require iterating through all the possible combinations in the worst case scenario, resulting in O(n<sup>2</sup>) time complexity, which is not ideal.</p>
 <h2 id="decision-tree---top-down-recursion" style="position:relative;"><a href="#decision-tree---top-down-recursion" aria-label="decision tree   top down recursion permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decision Tree - Top Down Recursion</h2>

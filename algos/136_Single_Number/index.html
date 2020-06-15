@@ -64,24 +64,6 @@
 <li>How to use XOR: <a href="https://www.youtube.com/watch?v=VPw9vPN-3ac">YouTube</a></li>
 <li>Python Sets: <a href="https://docs.python.org/2/library/sets.html">8.7. sets — Unordered collections of unique elements — Python 2.7.18 documentation</a></li>
 </ul>
-<h2 id="description" style="position:relative;"><a href="#description" aria-label="description permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
-<p>Given a non-empty array of integers, every element appears twice except for one. Find that single one.</p>
-<p>Note:</p>
-<p>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Example 1:
-
-Input: [2,2,1]
-Output: 1
-Example 2:
-
-Input: [4,1,2,1,2]
-Output: 4
-
-4: 0
-1: 1
-2: 2
-
-i = 3 // 1</code></pre></div>
 <h1 id="iteration-on2--on" style="position:relative;"><a href="#iteration-on2--on" aria-label="iteration on2  on permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Iteration: O(n<sup>2</sup>) / O(n)</h1>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>

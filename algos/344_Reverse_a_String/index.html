@@ -67,19 +67,6 @@
 <li><a href="https://stackoverflow.com/questions/34633178/why-is-the-big-o-of-pop-different-from-pop0-in-python">algorithm - Why is the big O of pop() different from pop(0) in python - Stack Overflow</a></li>
 <li><a href="https://stackoverflow.com/questions/37582225/why-does-python-take-on-time-to-remove-the-first-element-from-a-list">algorithm - Why does Python take O(n) time to remove the first element from a list? - Stack Overflow</a></li>
 </ul>
-<h2 id="description" style="position:relative;"><a href="#description" aria-label="description permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
-<p>Write a function that reverses a string. The input string is given as an array of characters char[].</p>
-<p>Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.</p>
-<p>You may assume all the characters consist of printable ascii characters.</p>
-<p><strong>Example 1:</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: [&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]
-Output: [&quot;o&quot;,&quot;l&quot;,&quot;l&quot;,&quot;e&quot;,&quot;h&quot;]</code></pre></div>
-<p><strong>Example 2:</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: [&quot;H&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;h&quot;]
-Output: [&quot;h&quot;,&quot;a&quot;,&quot;n&quot;,&quot;n&quot;,&quot;a&quot;,&quot;H&quot;]</code></pre></div>
-<blockquote>
-<p>Note: Do not return anything, modify the string in place.  </p>
-</blockquote>
 <h2 id="iterate-append--and-delete-on2--on" style="position:relative;"><a href="#iterate-append--and-delete-on2--on" aria-label="iterate append  and delete on2  on permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Iterate append  and delete: O(n<sup>2</sup>) / O(n)</h2>
 <p>Because of the <code class="language-text">del s[0]</code> operation inside the while loop, the time complexity is O(n<sup>2</sup>)</p>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
