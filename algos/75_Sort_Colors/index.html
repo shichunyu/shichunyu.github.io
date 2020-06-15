@@ -78,37 +78,37 @@ s<span class="token punctuation">.</span>sortColors<span class="token punctuatio
 <h2 id="intuition" style="position:relative;"><a href="#intuition" aria-label="intuition permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Intuition</h2>
 <p>This approach takes advantage of the fact that we have only 3 numbers: <code class="language-text">0,1,2</code></p>
 <p>We know that <code class="language-text">0</code> must be on the very left, <code class="language-text">2</code> must be on the very right, and <code class="language-text">1</code> in between them.</p>
-<p>The key is to know where the 0's end and where the 2's start, so we initialize 2 variables to keep track of them: <code class="language-text">last_zero</code> and <code class="language-text">first_two</code>.</p>
+<p>The key is to know where the 0's end and where the 2's start, so we initialize 2 variables to keep track of them: <code class="language-text">l</code> and <code class="language-text">r</code>.</p>
 <ul>
-<li>We initialize <code class="language-text">last_zero</code> at <code class="language-text">-1</code> or right before the start of the array</li>
-<li>We initialize <code class="language-text">first_two</code> at <code class="language-text">len(array)</code> or right after the last element of the array.</li>
+<li>We initialize <code class="language-text">l</code> at <code class="language-text">-1</code> or right before the start of the array</li>
+<li>We initialize <code class="language-text">r</code> at <code class="language-text">len(array)</code> or right after the last element of the array.</li>
 </ul>
 <p>We will have another variable to keep track of the element we are assessing, called <code class="language-text">i</code> which iterates over the array starting from index 0:</p>
 <ul>
-<li>If the element is a <code class="language-text">0</code> and it is after the <code class="language-text">last_zero</code>, we should move it to the front of the array.</li>
-<li>If the element is a <code class="language-text">2</code> and it is before the <code class="language-text">first_two</code> we should move it ot the right of the array.</li>
+<li>If the element is a <code class="language-text">0</code> and it is after the <code class="language-text">l</code>, we should move it to the front of the array.</li>
+<li>If the element is a <code class="language-text">2</code> and it is before the <code class="language-text">r</code> we should move it ot the right of the array.</li>
 </ul>
 <p>Otherwise, for 0s and 1s we should simply move our pointer <code class="language-text">i</code> forward.</p>
-<p>If we encounter a 2 and it is equal to the <code class="language-text">first_two</code> it means we can stop our sorting because we've sorted everything</p>
+<p>If we encounter a 2 and it is equal to the <code class="language-text">r</code> it means we can stop our sorting because we've sorted everything</p>
 <h2 id="trace" style="position:relative;"><a href="#trace" aria-label="trace permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trace</h2>
-<p>In the below trace, we'll use <code class="language-text">|</code> to indicate the position of the <code class="language-text">last_zero</code> and <code class="language-text">first_two</code>.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[|2,0,2,1,1,0|] i = 2 and is before first_two, so move it to the end. Decrement first_two by 1
+<p>In the below trace, we'll use <code class="language-text">|</code> to indicate the position of the <code class="language-text">l</code> and <code class="language-text">r</code>.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[|2,0,2,1,1,0|] i = 2 and is before r, so move it to the end. Decrement r by 1
   i
-[|0,2,1,1,0|2] i = 0 and it is before the first_zero, so move it to the front. Increment last_zero by 1
+[|0,2,1,1,0|2] i = 0 and it is before the first_zero, so move it to the front. Increment l by 1
   i
-[0|2,1,1,0|2] i = 0 but it is equal to last_zero, so increment i by 1.
+[0|2,1,1,0|2] i = 0 but it is equal to l, so increment i by 1.
  i
-[0|2,1,1,0|2] i = 2 and is before first_two, so move it to the end. Decrement first_two by 1
+[0|2,1,1,0|2] i = 2 and is before r, so move it to the end. Decrement r by 1
    i
 [0|1,1,0|2,2] i = 1. Increment i by 1
    i
 [0|1,1,0|2,2] i = 1. Increment i by 1
      i
-[0|1,1,0|2,2] i = 0 and it is before the first_zero, so move it to the front. Increment last_zero by 1
+[0|1,1,0|2,2] i = 0 and it is before the first_zero, so move it to the front. Increment l by 1
        i
 [0,0|1,1|2,2] i = 1. Increment i by 1
        i
-[0,0|1,1|2,2] i = 2 but it is equal to first_two. Our sorting is done!
+[0,0|1,1|2,2] i = 2 but it is equal to r. Our sorting is done!
          i</code></pre></div>
 <h2 id="code" style="position:relative;"><a href="#code" aria-label="code permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h2>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
@@ -116,22 +116,22 @@ s<span class="token punctuation">.</span>sortColors<span class="token punctuatio
         <span class="token triple-quoted-string string">"""
         Do not return anything, modify nums in-place instead.
         """</span>
-        last_zero <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
-        first_two <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        l <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+        r <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
         i <span class="token operator">=</span> <span class="token number">0</span>
         <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> i <span class="token operator">!=</span> last_zero<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> i <span class="token operator">!=</span> l<span class="token punctuation">:</span>
                 <span class="token keyword">del</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
                 nums<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
-                last_zero <span class="token operator">+=</span> <span class="token number">1</span>
+                l <span class="token operator">+=</span> <span class="token number">1</span>
                 i <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> i <span class="token operator">==</span> last_zero<span class="token punctuation">:</span>
+            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> i <span class="token operator">==</span> l<span class="token punctuation">:</span>
                 i <span class="token operator">+=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span> <span class="token keyword">and</span> i <span class="token operator">!=</span> first_two<span class="token punctuation">:</span>
+            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span> <span class="token keyword">and</span> i <span class="token operator">!=</span> r<span class="token punctuation">:</span>
                 <span class="token keyword">del</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
                 nums<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
-                first_two <span class="token operator">-=</span> <span class="token number">1</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span> <span class="token keyword">and</span> i <span class="token operator">==</span> first_two<span class="token punctuation">:</span>
+                r <span class="token operator">-=</span> <span class="token number">1</span>
+            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span> <span class="token keyword">and</span> i <span class="token operator">==</span> r<span class="token punctuation">:</span>
                 <span class="token keyword">break</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
                 i <span class="token operator">+=</span> <span class="token number">1</span>
@@ -146,43 +146,49 @@ s<span class="token punctuation">.</span>sortColors<span class="token punctuatio
 <h2 id="three-pointer-w-swap-on--o1" style="position:relative;"><a href="#three-pointer-w-swap-on--o1" aria-label="three pointer w swap on  o1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Three-Pointer w/ Swap: O(n) / O(1)</h2>
 <p>Instead of deleting the element and moving it to the front, we can also swap elements. This makes the code a bit shorter.</p>
 <ul>
-<li>Instead of initializing <code class="language-text">last_zero</code> at <code class="language-text">-1</code>, we initialize it at <code class="language-text">0</code> or the first index of the array.</li>
-<li>Instead of initializing <code class="language-text">first_two</code> at <code class="language-text">len(nums)</code> we initialize it at <code class="language-text">len(nums)-1</code> or the last index of the array.</li>
+<li>Instead of initializing <code class="language-text">l</code> at <code class="language-text">-1</code>, we initialize it at <code class="language-text">0</code> or the first index of the array.</li>
+<li>Instead of initializing <code class="language-text">r</code> at <code class="language-text">len(nums)</code> we initialize it at <code class="language-text">len(nums)-1</code> or the last index of the array.</li>
 <li>Instead of iterating <code class="language-text">i</code> trhough the entire array, we only need to iterate i until it reaches <code class="language-text">first-two</code> (technically this is true of the previous code as well).</li>
 </ul>
 <h3 id="trace-1" style="position:relative;"><a href="#trace-1" aria-label="trace 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trace</h3>
-<p>In the below trace, we'll use <code class="language-text">|</code> to indicate the position of the <code class="language-text">last_zero</code> and <code class="language-text">first_two</code>.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[2|0,2,1,1,|0] i = 2 and is before first_two, so swap it with the element at first_two. Decrement first_two by 1
+<p>In the below trace, we'll use <code class="language-text">|</code> to indicate the position of the <code class="language-text">l</code> and <code class="language-text">r</code>.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[2|0,2,1,1,|0] i = 2 and is before right, so swap it with the element at right. Decrement r by 1
  i
-[0,0,2,1|1,2] i = 0 so swap it with the element at last_zero (which happens to be itself). Increment i and last_zero by 1
+[0,0,2,1|1,2] i = 0 so swap it with the element at l (which happens to be itself). Increment i and l by 1
  i
-[0,0|2,1|1,2] i = 0 so swap it with the element at last_zero. Increment i and last_zero by 1
+[0,0|2,1|1,2] i = 0 so swap it with the element at l. Increment i and l by 1
    i
-[0,0,2|1,|1,2] i = 2 and is before first_two, so swap it with the element at first_two. Decrement first_two by 1
+[0,0,2|1,|1,2] i = 2 and is before right, so swap it with the element at r. Decrement r by 1
      i
 [0,0,1||1,2,2] i = 1. Increment i by 1
      i
-[0,0,1||1,2,2] i &gt; first_two. We are done sorting!
+[0,0,1||1,2,2] i &gt; r. We are done sorting!
         i</code></pre></div>
 <h3 id="code-1" style="position:relative;"><a href="#code-1" aria-label="code 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code</h3>
 <div class="gatsby-highlight" data-language="python"><pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">sortColors</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-		<span class="token triple-quoted-string string">"""
+    <span class="token keyword">def</span> <span class="token function">sortColors</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
         Do not return anything, modify nums in-place instead.
         """</span>
-        first_zero <span class="token operator">=</span> <span class="token number">0</span>
-        last_two <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+        l <span class="token operator">=</span> <span class="token number">0</span>
+        r <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
         i <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> last_two<span class="token punctuation">:</span>
+        <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> r<span class="token punctuation">:</span>
             <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                nums<span class="token punctuation">[</span>first_zero<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>first_zero<span class="token punctuation">]</span>
-                first_zero <span class="token operator">+=</span> <span class="token number">1</span>
+                nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+                l <span class="token operator">+=</span> <span class="token number">1</span>
+                <span class="token comment"># note that we can increment i here because all the numbers before i are guaranteed to be 0s, so they are already sorted</span>
                 i <span class="token operator">+=</span> <span class="token number">1</span>
             <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
-                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>last_two<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>last_two<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-                last_two <span class="token operator">-=</span> <span class="token number">1</span>
+                nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+                r <span class="token operator">-=</span> <span class="token number">1</span>
+                <span class="token comment"># notice that we don't increment i here. This is because we still need to sort the new number that we swapped with.</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span></code></pre></div></div></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+                i <span class="token operator">+=</span> <span class="token number">1</span>
+
+
+s <span class="token operator">=</span> Solution<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>sortColors<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div></div></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
